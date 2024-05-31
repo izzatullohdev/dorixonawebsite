@@ -40,6 +40,7 @@ const MediaNavbar = () => {
   ];
   const handlePage = (page) => {
     setDataPage(page);
+    setFilteredData([]);
     setSearchQuery(""); // Reset the search query input field
     setOpen(false); // Optionally close the hamburger menu if open
   };

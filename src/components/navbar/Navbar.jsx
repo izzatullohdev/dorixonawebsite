@@ -22,7 +22,7 @@ const Navbar = () => {
   };
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  const { products } = useContext(dataContext);
+  const { products, setDataPage } = useContext(dataContext);
   // Function to handle input changes
   const handleInputChange = (event) => {
     const query = event.target.value;
@@ -35,6 +35,11 @@ const Navbar = () => {
     } else {
       setFilteredData([]);
     }
+  };
+  const handlePage = (page) => {
+    setDataPage(page);
+    setFilteredData([]);
+    setSearchQuery(""); // Reset the search query input field
   };
   return (
     <nav id="navbar">
@@ -122,9 +127,13 @@ const Navbar = () => {
                 <p className="text-[16px] md:text-[18px] lg:text-[20px] my-1">
                   {product.sum} {t("product.productSena")}
                 </p>
-                <button className="btn px-10 py-2 text-[15px] rounded-md">
+                <NavLink
+                  to="/datapage"
+                  onClick={() => handlePage(product)}
+                  className="btn px-10 py-2 text-[15px] rounded-md"
+                >
                   {t("Global.button")}
-                </button>
+                </NavLink>
               </div>
             ))}
           </div>
