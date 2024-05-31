@@ -1,0 +1,54 @@
+.btn {
+  padding: 15px 50px;
+  background-color: #354f52;
+  color: #f2ce9a;
+  border-radius: 10px;
+}
+.btn_card {
+  padding: 7px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  float: right;
+}
+.card {
+  border: 1px solid;
+}
+html {
+  scroll-behavior: smooth;
+}
+.AboutComponents {
+  background: url("./assets/About Header.svg") center no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+/* sm  */
+@media (min-width: 0px) and (max-width: 640px) {
+  .btn {
+    padding: 8px 30px;
+    background-color: #354f52;
+    color: #f2ce9a;
+    border-radius: 5px;
+  }
+  .btn_card {
+    padding: 7px 16px;
+    font-size: 12px;
+    border-radius: 5px;
+    float: right;
+  }
+  .AboutComponents {
+    height: 50vh;
+  }
+}
+/* md  */
+/* Styles for react-rater */
+.rater {
+  color: gold; /* Set color for active stars */
+}
+
+.is-active {
+  color: gold !important; /* Ensuring active stars are gold */
+}
+
+.rater-star {
+  color: gray; /* Color for inactive stars */
+}

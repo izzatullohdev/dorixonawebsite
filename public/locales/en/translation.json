@@ -1,0 +1,39 @@
+{
+  "tnav": {
+    "address": "Address",
+    "quiz": "Send your questions!",
+    "call": "Contact us!"
+  },
+  "navbar": {
+    "main": "Main",
+    "about": "About us",
+    "product": "Products",
+    "news": "News",
+    "doc": "Doctors"
+  },
+  "doctors": {
+    "mainInfo": "Our Doctors",
+    "direction": "Direction",
+    "call": "Phone number",
+    "info": "Information"
+  },
+  "product": {
+    "name": "Products",
+    "body": "Free delivery for orders over !",
+    "sena": "uzs",
+    "global": "Popular",
+    "reacting": "High Rating",
+    "productSena": "sum"
+  },
+  "customer": { "name": "Customer Opinion" },
+  "Global": {
+    "button": "More details"
+  },
+  "category": {
+    "imunitet": "Immunity",
+    "erkaklar": "Men",
+    "ayollar": "Women",
+    "bolalar": "Children",
+    "keksalar": "Elderly"
+  }
+}

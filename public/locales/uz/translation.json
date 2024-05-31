@@ -1,0 +1,51 @@
+{
+  "tnav": {
+    "address": "Manzil",
+    "quiz": "Savollar yo’llang!",
+    "call": " Biz bilan bog’laning!"
+  },
+  "navbar": {
+    "main": "Asosiy",
+    "about": "Biz haqimizda",
+    "product": "Mahsulotlar",
+    "news": "Yangiliklar",
+    "doc": "Doctorlar"
+  },
+  "doctors": {
+    "mainInfo": "Bizning Shifokorlar",
+    "direction": "Yonalishi",
+    "call": "Tel raqam",
+    "info": "Ma'lumot"
+  },
+  "product": {
+    "name": "Mahsulotlar",
+    "body": "dan yuqori bo’lgan haridlar uchun yetkazib berish bepul!",
+    "sena": "uzs",
+    "global": "Ommabop",
+    "reacting": "Reytingi yuqori",
+    "productSena": "sum"
+  },
+  "customer": {
+    "name": "Mijozlar fikri"
+  },
+  "Global": {
+    "button": "Batafsil"
+  },
+  "AboutComponents": {
+    "title": "Biz insonlarga salomatlik ulashamiz!",
+    "description": " Lorem ipsum dolor sit amet consectetur. Rutrum sit quisqu varius interdum dictumst id.",
+    "main_title": "Alkimyogar mijozlar foydasini o'ylaydi",
+    "main_description": "lkimyogar Farm Kompaniyasi Kanada nanotexnologiyalar asosida yuqori sifatli kolloid minerallar hamda dorivor o’simliklardan tayyorlangan shifobaxsh ekstraktlar ishlab chiqarish bilan shug’ullanadi. Ekstraktlar gidrolat usulida bo’lib, MDX davlatlari ichida ularni iste’mol uchun chiqargan ilk kompaniya hisoblanadi! Korxona 2019-yilda tashkil topgan bo’lib, mana shu qisqa vaqt mobaynida 20 dan ortiq mahsulot assortimenti hamdan 5000 dan ortiq o’zining mamnun mijozlariga ega. Kompaniya sifatli, tabiiy hamda hamyonbob mahsulotlar ishlab chiqarish asosida millatning salomatligiga hissa qo’shishni o’z oldiga maqsad qilib qo’ygan.",
+    "number_title": "Xorijiy va mahalliy ilmiy- tadqiqot markazlari bilan hamkorlik!",
+    "number_title1": "Doimiy mamnun iste'molchilar",
+    "number_title2": "Shifobaxsh mahsulotlar assortimenti",
+    "hamkorlar": "Hamkorlar"
+  },
+  "category": {
+    "imunitet": "Imunitet",
+    "erkaklar": "Erkaklar",
+    "ayollar": "Ayollar",
+    "bolalar": "Bolalar",
+    "keksalar": "Keksalar"
+  }
+}
