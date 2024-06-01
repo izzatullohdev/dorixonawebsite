@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../useContext/DataContext";
 import { useTranslation } from "react-i18next";
 import AboutVideo from "../../components/About.components/AboutVideo";
+import { NavLink } from "react-router-dom";
 
 const Products = () => {
   const { t } = useTranslation();
@@ -49,14 +50,23 @@ const Products = () => {
               key={product.id}
               className="border p-5 rounded-md border-stone-300 flex justify-center items-center flex-col"
             >
-              <img src={product.picture} className="w-[70px] md:w-[100px] lg:w-[150px]" alt="" />
-              <h1 className="mt-2 font-[500] text-[18px] md:text-[20px] lg:text-[20px]">{product.name}</h1>
+              <img
+                src={product.picture}
+                className="w-[70px] md:w-[100px] lg:w-[150px]"
+                alt=""
+              />
+              <h1 className="mt-2 font-[500] text-[18px] md:text-[20px] lg:text-[20px]">
+                {product.name}
+              </h1>
               <p className="text-[16px] md:text-[18px] lg:text-[20px] my-1">
                 {product.sum} {t("product.productSena")}
               </p>
-              <button className="btn px-10 py-2 text-[15px] rounded-md">
+              <NavLink
+                to={`/datapage/${product.id}`}
+                className="btn px-10 py-2 text-[15px] rounded-md"
+              >
                 {t("Global.button")}
-              </button>
+              </NavLink>
             </div>
           ))}
         </div>

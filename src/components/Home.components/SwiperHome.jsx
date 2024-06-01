@@ -47,7 +47,7 @@ const SwiperHome = () => {
               </p>
 
               <NavLink
-                to="/datapage"
+                to={`/productpage/${item.id}`}
                 onClick={() => handlePage(item)}
                 className="btn my-5"
               >

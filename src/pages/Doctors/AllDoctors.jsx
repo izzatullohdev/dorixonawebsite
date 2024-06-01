@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { dataContext } from "../../useContext/DataContext";
 import { useTranslation } from "react-i18next";
 import AboutVideo from "../../components/About.components/AboutVideo";
+import { NavLink } from "react-router-dom";
 const AllDoctors = () => {
   const { doctors } = useContext(dataContext);
   const { t } = useTranslation();
@@ -65,7 +66,9 @@ const AllDoctors = () => {
                   <span className="font-[600]">{t("doctors.info")}: </span>
                   {item.body}
                 </p>
-                <button className="btn btn_card">{t("Global.button")}</button>
+                <NavLink to={`/doctorpage/${item.id}`} className="btn btn_card">
+                  {t("Global.button")}
+                </NavLink>
               </div>
             </div>
           ))}

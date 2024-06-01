@@ -6,6 +6,7 @@ export const headerData = [
     name: "Imunitetni oshiruvchi tabiiy sirop.",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     picture: picOne,
+
     tarkibi:
       "Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna. Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna.",
     int: ["erkaklar", "imunitet"],
@@ -60,6 +61,7 @@ export const doctors = [
   {
     id: 1,
     name: "Adrian Lewis",
+    name2: "lola",
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
@@ -68,6 +70,7 @@ export const doctors = [
   {
     id: 2,
     name: "Adrian Lewis",
+    name2: "lola",
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
@@ -76,6 +79,7 @@ export const doctors = [
   {
     id: 3,
     name: "Adrian Lewis",
+    name2: "lola",
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
@@ -84,6 +88,7 @@ export const doctors = [
   {
     id: 4,
     name: "Adrian Lewis",
+    name2: "lola",
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
@@ -92,6 +97,7 @@ export const doctors = [
   {
     id: 5,
     name: "Adrian Lewis",
+    name2: "barno",
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
@@ -101,6 +107,7 @@ export const doctors = [
     id: 6,
     name: "Adrian Lewis",
     direction: "Terapevt",
+    name2: "barno",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
     picture: doctor,
@@ -108,6 +115,7 @@ export const doctors = [
   {
     id: 7,
     name: "Adrian Lewis",
+    name2: "barno",
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
@@ -116,6 +124,7 @@ export const doctors = [
   {
     id: 8,
     name: "Adrian Lewis",
+    name2: "barno",
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
@@ -136,6 +145,7 @@ export const products = [
     int: ["erkaklar", "imunitet"],
     turi: "Sirop",
     data: "10 oy",
+    tavsiya: "lola",
     tarkibi:
       "Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna. Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna.",
   },
@@ -146,6 +156,7 @@ export const products = [
     name: "Argeta 100ml",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     sum: "100000",
+    tavsiya: "barno",
     int: ["ayollar", "imunitet"],
     turi: "Sirop",
     data: "10 oy",
@@ -157,6 +168,7 @@ export const products = [
     start: 3,
     picture: productImage,
     name: "Argeta 100ml",
+    tavsiya: "barno",
     sum: "100000",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     turi: "Sirop",
@@ -171,6 +183,7 @@ export const products = [
     picture: productImage,
     name: "Argeta 100ml",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
+    tavsiya: "lola",
     sum: "100000",
     int: ["bolalar", "imunitet"],
     data: "10 oy",
@@ -184,6 +197,7 @@ export const products = [
     name: "Argeta 100ml",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     turi: "Sirop",
+    tavsiya: "lola",
     data: "10 oy",
     sum: "100000",
     int: ["bolalar"],
@@ -196,6 +210,7 @@ export const products = [
     picture: productImage,
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     name: "Argeta 100ml",
+    tavsiya: "barno",
     sum: "100000",
     data: "10 oy",
     turi: "Sirop",
@@ -210,6 +225,7 @@ export const products = [
     name: "Argeta 100ml",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     data: "10 oy",
+    tavsiya: "barno",
     turi: "Sirop",
     sum: "100000",
     int: ["bolalar", "imunitet"],

@@ -6,11 +6,11 @@ import "react-rater/lib/react-rater.css";
 import DataVideo from "./DataVideo";
 import { dataContext } from "../../useContext/DataContext"; // Ensure correct path to DataContext
 
-const DataPage = () => {
+const ProductPage = () => {
   const { id } = useParams(); // Retrieve the dynamic ID from the route
-  console.log(id);
-  const { products } = useContext(dataContext); // Assuming products is available in the context and contains all required data
-  const datapage = products.find((product) => product.id === Number(id));
+
+  const { headerData } = useContext(dataContext); // Assuming products is available in the context and contains all required data
+  const datapage = headerData.find((product) => product.id === Number(id));
 
   if (!datapage) {
     return <div>Product not found</div>; // Handling case where no product matches the ID
@@ -78,7 +78,7 @@ const DataPage = () => {
   );
 };
 
-DataPage.propTypes = {
+ProductPage.propTypes = {
   // Define propTypes for the expected structure of 'datapage', ensure this matches how data is structured in your context
   datapage: PropTypes.shape({
     id: PropTypes.string.isRequired, // Ensure there's an ID if it's used for routing
@@ -94,4 +94,4 @@ DataPage.propTypes = {
   }).isRequired,
 };
 
-export default DataPage;
+export default ProductPage;

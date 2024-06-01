@@ -21,8 +21,11 @@ import News from "./pages/News/News.jsx";
 import AllDoctors from "./pages/Doctors/AllDoctors.jsx";
 import DataPage from "./components/dataPage/DataPage.jsx";
 import { useState } from "react";
+import ProductPage from "./components/dataPage/ProductPage.jsx";
+import DoctorPage from "./components/doctorPage/DoctorPage.jsx";
 const App = () => {
-  const [dataPage, setDataPage] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [_, setDataPage] = useState([]);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -49,8 +52,16 @@ const App = () => {
           element: <AllDoctors />,
         },
         {
-          path: "/datapage",
-          element: <DataPage datapage={dataPage} />,
+          path: "/datapage/:id",
+          element: <DataPage />,
+        },
+        {
+          path: "/productpage/:id",
+          element: <ProductPage />,
+        },
+        {
+          path: "/doctorpage/:id",
+          element: <DoctorPage />,
         },
       ],
     },

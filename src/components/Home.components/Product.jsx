@@ -97,7 +97,7 @@ const Product = () => {
                 {product.sum} {t("product.productSena")}
               </p>
               <NavLink
-                to="/datapage"
+                to={`/datapage/${product.id}`}
                 className="btn px-10 py-2 text-[15px] rounded-md"
                 onClick={() => handlePage(product)}
               >

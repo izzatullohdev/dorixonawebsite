@@ -10,6 +10,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import { dataContext } from "../../useContext/DataContext";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 const Doctors = () => {
   const { t } = useTranslation();
@@ -75,7 +76,9 @@ const Doctors = () => {
                   <span className="font-[600]">{t("doctors.info")}: </span>
                   {item.body}
                 </p>
-                <button className="btn btn_card">{t("Global.button")}</button>
+                <NavLink to={`/doctorpage/${item.id}`} className="btn btn_card">
+                  {t("Global.button")}
+                </NavLink>
               </div>
             </div>
           </SwiperSlide>
