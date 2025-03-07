@@ -1,6 +1,6 @@
 import{ useEffect } from "react"; // Import useEffect
 import PropTypes from "prop-types";
-import ReactPlayer from "react-player/youtube"; // Optimized for YouTube only
+import ReactPlayer from "react-player";
 
 const DataVideo = ({ videoUrl }) => {
   // Scroll to the top on component mount

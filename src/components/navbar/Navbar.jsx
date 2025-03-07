@@ -1,5 +1,5 @@
 // picture
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 // icons
 import { FaMapLocationDot } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
@@ -23,7 +23,6 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const { products, setDataPage } = useContext(dataContext);
-  // Function to handle input changes
   const handleInputChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
@@ -39,13 +38,13 @@ const Navbar = () => {
   const handlePage = (page) => {
     setDataPage(page);
     setFilteredData([]);
-    setSearchQuery(""); // Reset the search query input field
+    setSearchQuery("");
   };
   return (
     <nav id="navbar">
       <div className="bg-[#354F52]">
-        <div className="container mx-auto py-4 flex justify-between items-center">
-          <img src={logo} alt="" className="w-[40px] md:w-[50px] lg:w-[70px]" />
+        <div className="container mx-auto py-3 flex justify-between items-center">
+          <img src={logo} alt="" className="w-[100px] md:w-[100px] lg:w-[130px]" />
           <ul className="text-[#fff] flex items-center gap-10">
             <li>
               <a href="" className="flex items-center gap-2 text-[14px]">
@@ -80,7 +79,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="bg-[#2F3E46]">
-        <div className="container mx-auto py-4 flex justify-between items-center ">
+        <div className="container mx-auto py-5 flex justify-between items-center">
+          <div className="max-xl:hidden"></div>
+          <div className="max-xl:hidden"></div>
           <ul className="flex items-center gap-5 text-white">
             <li>
               <NavLink to="/">{t("navbar.main")}</NavLink>
@@ -92,10 +93,10 @@ const Navbar = () => {
               <NavLink to="/product">{t("navbar.product")}</NavLink>
             </li>
             <li>
-              <NavLink to="/news">{t("navbar.news")}</NavLink>
+              <NavLink to="/alldoctors">{t("navbar.doc")}</NavLink>
             </li>
             <li>
-              <NavLink to="/alldoctors">{t("navbar.doc")}</NavLink>
+              <NavLink to="/news">{t("navbar.news")}</NavLink>
             </li>
           </ul>
           <div className="search bg-white flex items-center gap-4 px-4 py-1 rounded-md">
@@ -110,7 +111,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 lg:gap-10 p-2">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 lg:gap-10">
             {filteredData.map((product) => (
               <div
                 key={product.id}

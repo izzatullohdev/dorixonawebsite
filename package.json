@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
+    "antd": "^5.24.3",
     "framer-motion": "^11.2.6",
     "hamburger-react": "^2.5.1",
     "i18next": "^23.11.4",
@@ -20,6 +22,7 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^14.1.1",
     "react-icons": "^5.2.1",
+    "react-player": "^2.16.0",
     "react-rater": "^6.0.5",
     "react-router-dom": "^6.23.1",
     "react-scroll-trigger": "^0.6.14",

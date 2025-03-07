@@ -390,3 +390,22 @@ export const yutuqlar = [
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint recusandae placeat mollitia fuga exercitationem tempora corrupti, voluptatem delectus nobis laudantium.",
   },
 ];
+
+export const videos = [
+  {
+    id: 1,
+    video: "https://youtube.com/shorts/Wo0smJajSuM?si=5hCewJyCWtpo8FnC"
+  },
+  {
+    id: 2,
+    video: "https://youtube.com/shorts/Wo0smJajSuM?si=5hCewJyCWtpo8FnC"
+  },
+  {
+    id: 3,
+    video: "https://youtube.com/shorts/Wo0smJajSuM?si=5hCewJyCWtpo8FnC"
+  },
+  {
+    id: 4,
+    video: "https://youtube.com/shorts/Wo0smJajSuM?si=5hCewJyCWtpo8FnC"
+  }
+]

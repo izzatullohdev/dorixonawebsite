@@ -16,6 +16,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 .AboutComponents {
   background: url("./assets/About Header.svg") center no-repeat;
   background-size: cover;

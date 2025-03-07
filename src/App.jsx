@@ -9,6 +9,7 @@ import {
   hamkorlar,
   chegirma,
   yutuqlar,
+  videos,
 } from "../data/data.js";
 
 // css
@@ -76,6 +77,7 @@ const App = () => {
         hamkorlar,
         chegirma,
         yutuqlar,
+        videos,
         setDataPage,
       }}
     >

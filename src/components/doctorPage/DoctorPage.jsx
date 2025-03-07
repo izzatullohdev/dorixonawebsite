@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { dataContext } from "../../useContext/DataContext";
 import { useTranslation } from "react-i18next";
-import VideoDoctor from "./videoDoctor";
+import VideoDoctor from "./VideoDoctor";
 
 const DoctorPage = () => {
   const { t } = useTranslation();

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 // icons
 import { RxPinTop } from "react-icons/rx";
 import { FaTelegram, FaInstagram, FaFacebook } from "react-icons/fa";

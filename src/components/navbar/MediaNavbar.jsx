@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Hamburger from "hamburger-react";
 import { CiSearch } from "react-icons/ci";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import { useContext } from "react";
 import { dataContext } from "../../useContext/DataContext";
 const MediaNavbar = () => {
@@ -41,8 +41,8 @@ const MediaNavbar = () => {
   const handlePage = (page) => {
     setDataPage(page);
     setFilteredData([]);
-    setSearchQuery(""); // Reset the search query input field
-    setOpen(false); // Optionally close the hamburger menu if open
+    setSearchQuery("");
+    setOpen(false);
   };
 
   return (
