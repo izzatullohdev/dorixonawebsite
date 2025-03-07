@@ -55,7 +55,7 @@ const Navbar = () => {
     <nav id="navbar">
       <div className="bg-[#354F52]">
         <div className="container mx-auto py-3 flex justify-between items-center">
-          <img src={logo} alt="" className="w-[100px] md:w-[100px] lg:w-[130px]" />
+          <img src={logo} alt="" className="w-[100px] md:w-[100px] lg:w-[150px]" />
           <ul className="text-[#fff] flex items-center gap-10">
             <li>
               <a href="" className="flex items-center gap-2 text-[14px]">
