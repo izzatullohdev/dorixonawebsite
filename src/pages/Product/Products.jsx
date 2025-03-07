@@ -3,14 +3,21 @@ import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../useContext/DataContext";
 import { useTranslation } from "react-i18next";
 import AboutVideo from "../../components/About.components/AboutVideo";
-import { NavLink } from "react-router-dom";
+import { MdAddShoppingCart } from "react-icons/md";
+import { Modal, Input } from "antd";
+const { TextArea } = Input;
 
 const Products = () => {
   const { t } = useTranslation();
   const { products } = useContext(dataContext);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [category, setCategory] = useState("imunitet");
-  const videoUrl = "https://www.youtube.com/watch?v=DttV5GCdEMc"; // YouTube video URL
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
+  const videoUrl = "https://www.youtube.com/watch?v=DttV5GCdEMc";
 
   useEffect(() => {
     setFilteredProducts(
@@ -21,22 +28,42 @@ const Products = () => {
     );
   }, [category, products]);
 
-  const getButtonStyle = (buttonCategory) => {
-    return category === buttonCategory
-      ? "text-[15px] md:text-[20px] lg:text-[25px] border-b border-[#354F52]"
-      : "text-[15px] md:text-[20px] lg:text-[25px] text-[#354F52]";
+  const handleCart = (id) => {
+    let updatedCart;
+    if (cartItems.includes(id)) {
+      updatedCart = cartItems.filter((itemId) => itemId !== id);
+    } else {
+      updatedCart = [...cartItems, id];
+    }
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
+  // Modalni ochish funksiyasi
+  const showModal = (product) => {
+    setSelectedProduct(product); // Tanlangan mahsulotni saqlash
+    setIsModalVisible(true); // Modalni ochish
+  };
+
+  // Modalni yopish funksiyasi
+  const handleCancel = () => {
+    setIsModalVisible(false); // Modalni yopish
   };
 
   return (
     <>
       <SwiperHome />
       <div className="container mx-auto my-5">
-        <div className="flex items-center gap-5 md:gap-7  lg:gap-10 m-5 mg:my-10 lg:my-10">
+        <div className="flex items-center gap-5 md:gap-7 lg:gap-10 m-5 mg:my-10 lg:my-10">
           {["imunitet", "erkaklar", "ayollar", "bolalar", "keksalar"].map(
             (cat) => (
               <button
                 key={cat}
-                className={getButtonStyle(cat)}
+                className={`text-[15px] md:text-[20px] lg:text-[25px] ${
+                  category === cat
+                    ? "border-b border-[#354F52]"
+                    : "text-[#354F52]"
+                }`}
                 onClick={() => setCategory(cat)}
               >
                 {t(`category.${cat}`)}
@@ -61,15 +88,64 @@ const Products = () => {
               <p className="text-[16px] md:text-[18px] lg:text-[20px] my-1">
                 {product.sum} {t("product.productSena")}
               </p>
-              <NavLink
-                to={`/datapage/${product.id}`}
-                className="btn px-10 py-2 text-[15px] rounded-md"
-              >
-                {t("Global.button")}
-              </NavLink>
+              <div className="flex items-center gap-3">
+                <button 
+                  className="btn px-10 py-2 text-[15px] rounded-md"
+                  onClick={() => showModal(product)} // Modalni ochish
+                >
+                  {t("Global.button")}
+                </button>
+                <button
+                  className={`bg-[#354f52] rounded-md px-2 py-2 ${
+                    cartItems.includes(product.id) ? "hidden" : ""
+                  }`}
+                  onClick={() => handleCart(product.id)}
+                >
+                  <MdAddShoppingCart className="text-[22px] text-[#f2ce9a]" />
+                </button>
+              </div>
             </div>
           ))}
         </div>
+        <Modal
+          visible={isModalVisible}
+          onCancel={handleCancel}
+          footer={null}
+          width={900}
+          centered
+        >
+          <div className="flex max-md:flex-col items-center justify-center gap-10 p-10">
+            {selectedProduct && (
+              <div className="w-[450px] max-md:w-[80vw] flex flex-col items-center justify-center">
+                <img
+                  src={selectedProduct.picture}
+                  alt={selectedProduct.name}
+                  className="w-[60%] object-cover"
+                />
+                <h1 className="mt-3 text-[20px] font-[500]">
+                  {selectedProduct.name}
+                </h1>
+                <p className="py-2">
+                  <strong>Narxi:</strong> {selectedProduct.sum}{" "}
+                  {t("product.productSena")}
+                </p>
+                <p>
+                  <strong>Qo'shimcha ma'lumot:</strong> 
+                  {selectedProduct.body.slice(0, 120)}...
+                </p>
+              </div>
+            )}
+            <div className="w-[500px] max-md:w-[80vw] flex flex-col items-center justify-center rounded-lg">
+              <h1 className="text-center font-medium text-[25px] mb-3">Register form</h1>
+              <form action="" className="w-full flex flex-col items-center gap-3">
+                <Input type="text" placeholder="Name" className="text-[17px]"/>
+                <Input type="email" placeholder="Email" className="text-[17px]"/>
+                <TextArea placeholder="Your message..." rows={4} className="text-[17px]"/>
+                <button className="w-full text-[#EECB98] font-medium bg-[#354f52] rounded-md px-12 mt-2 py-2">Submit</button>
+              </form>
+            </div>
+          </div>
+        </Modal>
       </div>
       <AboutVideo videoUrl={videoUrl} />
     </>

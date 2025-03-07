@@ -24,6 +24,7 @@ import DataPage from "./components/dataPage/DataPage.jsx";
 import { useState } from "react";
 import ProductPage from "./components/dataPage/ProductPage.jsx";
 import DoctorPage from "./components/doctorPage/DoctorPage.jsx";
+import Korzinka from "./pages/Korzinka/Korzinka.jsx";
 const App = () => {
   // eslint-disable-next-line no-unused-vars
   const [_, setDataPage] = useState([]);
@@ -51,6 +52,10 @@ const App = () => {
         {
           path: "/alldoctors",
           element: <AllDoctors />,
+        },
+        {
+          path: "/cart",
+          element: <Korzinka />
         },
         {
           path: "/datapage/:id",

@@ -37,6 +37,7 @@ const MediaNavbar = () => {
     { path: "/product", name: t("navbar.product") },
     { path: "/news", name: t("navbar.news") },
     { path: "/alldoctors", name: t("navbar.doc") },
+    { path: "/cart", name: t("navbar.cart") },
   ];
   const handlePage = (page) => {
     setDataPage(page);
@@ -49,7 +50,7 @@ const MediaNavbar = () => {
     <div>
       <nav className="bg-[#354F52] p-5">
         <div className="container mx-auto flex justify-between items-center">
-          <img src={logo} alt="Logo" className="w-[50px]" />
+          <img src={logo} alt="Logo" className="w-[80px]" />
           <div className="flex-1 px-4">
             <div className="search bg-white flex items-center gap-4 px-4 py-1 rounded-md">
               <input

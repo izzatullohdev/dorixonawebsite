@@ -1,3 +1,6 @@
+import { useEffect, useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { dataContext } from "../../useContext/DataContext";
 // picture
 import logo from "../../assets/logo.png";
 // icons
@@ -6,23 +9,29 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { IoLanguage } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { dataContext } from "../../useContext/DataContext";
+
 const Navbar = () => {
   const [lang, setLang] = useState("uz");
   const { t, i18n } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
+  const { products, setDataPage } = useContext(dataContext);
+  const [cartLength, setCartLength] = useState(0);
+
   useEffect(() => {
     localStorage.setItem("language", lang);
-  });
+  }, [lang]);
+
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartLength(cart.length);
+  }, []);
+
   const handleLanguageChange = (e) => {
     setLang(e.target.value);
     i18n.changeLanguage(e.target.value);
   };
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
-  const { products, setDataPage } = useContext(dataContext);
+
   const handleInputChange = (event) => {
     const query = event.target.value;
     setSearchQuery(query);
@@ -35,11 +44,13 @@ const Navbar = () => {
       setFilteredData([]);
     }
   };
+
   const handlePage = (page) => {
     setDataPage(page);
     setFilteredData([]);
     setSearchQuery("");
   };
+
   return (
     <nav id="navbar">
       <div className="bg-[#354F52]">
@@ -98,6 +109,14 @@ const Navbar = () => {
             <li>
               <NavLink to="/news">{t("navbar.news")}</NavLink>
             </li>
+            <li className="flex items-center justify-center gap-[3px]">
+              <NavLink to="/cart">{t("navbar.cart")}</NavLink>
+              {cartLength > 0 && (
+                <div className="w-[16px] h-[20px] rounded-[50%] flex items-center justify-center bg-[#333] shadow shadow-[#333] text-sm">
+                  {cartLength}
+                </div>
+              )}
+            </li>
           </ul>
           <div className="search bg-white flex items-center gap-4 px-4 py-1 rounded-md">
             <input
@@ -108,35 +127,6 @@ const Navbar = () => {
               onChange={handleInputChange}
             />
             <CiSearch />
-          </div>
-        </div>
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 lg:gap-10">
-            {filteredData.map((product) => (
-              <div
-                key={product.id}
-                className="border p-5 rounded-md border-stone-300 flex justify-center items-center flex-col bg-[#fff]"
-              >
-                <img
-                  src={product.picture}
-                  className="w-[70px] md:w-[100px] lg:w-[150px]"
-                  alt=""
-                />
-                <h1 className="mt-2 font-[500] text-[18px] md:text-[20px] lg:text-[20px]">
-                  {product.name}
-                </h1>
-                <p className="text-[16px] md:text-[18px] lg:text-[20px] my-1">
-                  {product.sum} {t("product.productSena")}
-                </p>
-                <NavLink
-                  to="/datapage"
-                  onClick={() => handlePage(product)}
-                  className="btn px-10 py-2 text-[15px] rounded-md"
-                >
-                  {t("Global.button")}
-                </NavLink>
-              </div>
-            ))}
           </div>
         </div>
       </div>

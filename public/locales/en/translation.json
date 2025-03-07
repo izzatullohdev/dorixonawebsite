@@ -9,7 +9,8 @@
     "about": "About us",
     "product": "Products",
     "news": "News",
-    "doc": "Doctors"
+    "doc": "Doctors",
+    "cart":"Cart"
   },
   "doctors": {
     "mainInfo": "Our Doctors",

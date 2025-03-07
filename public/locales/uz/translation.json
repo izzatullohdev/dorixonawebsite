@@ -9,7 +9,8 @@
     "about": "Biz haqimizda",
     "product": "Mahsulotlar",
     "news": "Yangiliklar",
-    "doc": "Doctorlar"
+    "doc": "Doctorlar",
+    "cart":"Savat"
   },
   "doctors": {
     "mainInfo": "Bizning Shifokorlar",
