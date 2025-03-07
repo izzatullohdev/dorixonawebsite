@@ -50,7 +50,7 @@ const MediaNavbar = () => {
     <div>
       <nav className="bg-[#354F52] p-5">
         <div className="container mx-auto flex justify-between items-center">
-          <img src={logo} alt="Logo" className="w-[80px]" />
+          <img src={logo} alt="Logo" className="max-sm:w-[80px] w-[100px]" />
           <div className="flex-1 px-4">
             <div className="search bg-white flex items-center gap-4 px-4 py-1 rounded-md">
               <input
