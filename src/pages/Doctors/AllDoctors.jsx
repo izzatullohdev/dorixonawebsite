@@ -1,10 +1,10 @@
-import doc from "../../assets/Doc.svg";
 import { useContext } from "react";
 import { dataContext } from "../../useContext/DataContext";
 import { useTranslation } from "react-i18next";
 import AboutVideo from "../../components/About.components/AboutVideo";
 import { NavLink } from "react-router-dom";
 const AllDoctors = () => {
+  const doc = "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026148/About_Header_dbvotx.svg";
   const { doctors } = useContext(dataContext);
   const { t } = useTranslation();
   return (
