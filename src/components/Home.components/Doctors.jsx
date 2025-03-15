@@ -18,7 +18,7 @@ const Doctors = () => {
 
   return (
     <div className="container mx-auto my-10">
-      <h1 className="text-center text-[28px] md:text-[32px] lg:text-[32px] font-[500] my-6">
+      <h1 className="text-center text-[28px] md:text-[30px] lg:text-[40px] font-[500] my-6">
         {t("doctors.mainInfo")}
       </h1>
       <Swiper
@@ -84,6 +84,9 @@ const Doctors = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="w-full flex justify-center mt-1">
+        <NavLink to={"/alldoctors"} className={"text-center btn btn-card"}>{t("Global.more")}</NavLink>
+      </div>
     </div>
   );
 };

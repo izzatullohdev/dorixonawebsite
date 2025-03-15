@@ -3,6 +3,7 @@
   background-color: #354f52;
   color: #f2ce9a;
   border-radius: 10px;
+  cursor: pointer;
 }
 .btn_card {
   padding: 7px 16px;
@@ -18,7 +19,7 @@ html {
 }
 
 .AboutComponents {
-  background: url("./assets/About Header.svg") center no-repeat;
+  background: url("https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026148/About_Header_dbvotx.svg") center no-repeat;
   background-size: cover;
   height: 80vh;
 }

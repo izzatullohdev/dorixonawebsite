@@ -8,6 +8,7 @@
     "main": "Main",
     "about": "About us",
     "product": "Products",
+    "feedback":"feedback",
     "news": "News",
     "doc": "Doctors",
     "cart":"Cart"
@@ -26,9 +27,23 @@
     "reacting": "High Rating",
     "productSena": "sum"
   },
-  "customer": { "name": "Customer Opinion" },
+  "customer": { 
+    "name": "Customer Opinion" 
+  },
   "Global": {
-    "button": "More details"
+    "button": "More details",
+    "more":"More"
+  },
+  "AboutComponents": {
+    "heading": "About Us",
+    "title": "We bring health to people!",
+    "description": "Lorem ipsum dolor sit amet consectetur. Rutrum sit quisqu varius interdum dictumst id.",
+    "main_title": "Alchemist thinks about customer benefits",
+    "main_description": "Alkimyogar Farm Company specializes in the production of high-quality colloidal minerals and medicinal extracts made from healing plants based on Canadian nanotechnology. The extracts are produced using the hydrolate method, making the company the first in CIS countries to introduce them for consumption! Founded in 2019, the company has developed more than 20 product varieties and gained over 5000 satisfied customers in a short time. The company aims to contribute to the nation's health by producing high-quality, natural, and affordable products.",
+    "number_title": "Collaboration with foreign and local research centers!",
+    "number_title1": "Regular satisfied consumers",
+    "number_title2": "Assortment of healing products",
+    "hamkorlar": "Partners"
   },
   "category": {
     "imunitet": "Immunity",
@@ -36,5 +51,18 @@
     "ayollar": "Women",
     "bolalar": "Children",
     "keksalar": "Elderly"
+  },
+  "register": {
+    "title": "Contact us",
+    "button":"Submit",
+    "name":"Your name",
+    "phone":"Your phone number",
+    "message":"Your message"
+  },
+  "feedback": {
+    "title": "Customer Opinion"
+  },
+  "adress": {
+    "title": "Our address"
   }
 }

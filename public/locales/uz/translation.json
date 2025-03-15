@@ -8,6 +8,7 @@
     "main": "Asosiy",
     "about": "Biz haqimizda",
     "product": "Mahsulotlar",
+    "feedback":"feedback",
     "news": "Yangiliklar",
     "doc": "Doctorlar",
     "cart":"Savat"
@@ -30,9 +31,11 @@
     "name": "Mijozlar fikri"
   },
   "Global": {
-    "button": "Batafsil"
+    "button": "Batafsil",
+    "more":"Ko'proq"
   },
   "AboutComponents": {
+    "heading": "Biz haqimizda",
     "title": "Biz insonlarga salomatlik ulashamiz!",
     "description": " Lorem ipsum dolor sit amet consectetur. Rutrum sit quisqu varius interdum dictumst id.",
     "main_title": "Alkimyogar mijozlar foydasini o'ylaydi",
@@ -48,5 +51,18 @@
     "ayollar": "Ayollar",
     "bolalar": "Bolalar",
     "keksalar": "Keksalar"
+  },
+  "register": {
+    "title": "Biz bilan bog'laning",
+    "button":"Yuborish",
+    "name":"Ismingiz",
+    "phone":"Telefon raqamingiz",
+    "message":"Sizning xabaringiz"
+  },
+  "feedback": {
+    "title": "Mijozlar fikri"
+  },
+  "adress": {
+    "title": "Manzilimiz"
   }
 }

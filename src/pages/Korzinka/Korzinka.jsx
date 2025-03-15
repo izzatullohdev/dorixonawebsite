@@ -33,7 +33,7 @@ const Korzinka = () => {
   };
 
   return (
-    <div className="container min-h-[40vh] mx-auto my-10">
+    <div className="container min-h-[50vh] mx-auto my-10">
       <h1 className="text-[25px] font-semibold text-center mb-5">
         Siz tanlagan mahsulotlar
       </h1>

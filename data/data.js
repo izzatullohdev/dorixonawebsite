@@ -1,11 +1,9 @@
-// pictures
-import picOne from "../src/assets/1 1.svg";
 export const headerData = [
   {
     id: 1,
     name: "Imunitetni oshiruvchi tabiiy sirop.",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
-    picture: picOne,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026159/1_1_qmk0lf.svg",
 
     tarkibi:
       "Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna. Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna.",
@@ -19,7 +17,7 @@ export const headerData = [
     id: 2,
     name: "Imunitetni oshiruvchi tabiiy sirop.",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
-    picture: picOne,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026159/1_1_qmk0lf.svg",
     tarkibi:
       "Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna. Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna.",
     int: ["erkaklar", "imunitet"],
@@ -32,7 +30,7 @@ export const headerData = [
     id: 3,
     name: "Imunitetni oshiruvchi tabiiy sirop.",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
-    picture: picOne,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026159/1_1_qmk0lf.svg",
     tarkibi:
       "Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna. Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna.",
     int: ["erkaklar", "imunitet"],
@@ -45,7 +43,7 @@ export const headerData = [
     id: 4,
     name: "Imunitetni oshiruvchi tabiiy sirop.",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
-    picture: picOne,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026159/1_1_qmk0lf.svg",
     tarkibi:
       "Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna. Lorem ipsum dolor sit amet consectetur. Semper morbi pulvinar fermentum convallis quis non. Aliquam quam nunc proin nunc vel nulla enim a sed. Neque scelerisque fermentum mauris risus nullam lacus dis tempor semper. At adipiscing ultricies consectetur urna.",
     int: ["erkaklar", "imunitet"],
@@ -55,8 +53,7 @@ export const headerData = [
     sum: "100000",
   },
 ];
-// pitures doctor
-import doctor from "../src/assets/doctor.svg";
+
 export const doctors = [
   {
     id: 1,
@@ -65,7 +62,7 @@ export const doctors = [
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-    picture: doctor,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026121/doctor_qiijvo.svg",
   },
   {
     id: 2,
@@ -74,7 +71,7 @@ export const doctors = [
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-    picture: doctor,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026121/doctor_qiijvo.svg",
   },
   {
     id: 3,
@@ -83,7 +80,7 @@ export const doctors = [
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-    picture: doctor,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026121/doctor_qiijvo.svg",
   },
   {
     id: 4,
@@ -92,7 +89,7 @@ export const doctors = [
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-    picture: doctor,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026121/doctor_qiijvo.svg",
   },
   {
     id: 5,
@@ -101,7 +98,7 @@ export const doctors = [
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-    picture: doctor,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026121/doctor_qiijvo.svg",
   },
   {
     id: 6,
@@ -110,7 +107,7 @@ export const doctors = [
     name2: "barno",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-    picture: doctor,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026121/doctor_qiijvo.svg",
   },
   {
     id: 7,
@@ -119,7 +116,7 @@ export const doctors = [
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-    picture: doctor,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026121/doctor_qiijvo.svg",
   },
   {
     id: 8,
@@ -128,17 +125,15 @@ export const doctors = [
     direction: "Terapevt",
     call: "90 454 77 66",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy",
-    picture: doctor,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026121/doctor_qiijvo.svg",
   },
 ];
 
-// export products
-import productImage from "../src/assets/Argenta.svg";
 export const products = [
   {
     id: 1,
     start: 5,
-    picture: productImage,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026191/Argenta_rgg831.svg",
     name: "Argeta 100ml",
     sum: "100000",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
@@ -152,7 +147,7 @@ export const products = [
   {
     id: 2,
     start: 3,
-    picture: productImage,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026191/Argenta_rgg831.svg",
     name: "Argeta 100ml",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     sum: "100000",
@@ -166,7 +161,7 @@ export const products = [
   {
     id: 3,
     start: 3,
-    picture: productImage,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026191/Argenta_rgg831.svg",
     name: "Argeta 100ml",
     tavsiya: "barno",
     sum: "100000",
@@ -180,7 +175,7 @@ export const products = [
   {
     id: 4,
     start: 5,
-    picture: productImage,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026191/Argenta_rgg831.svg",
     name: "Argeta 100ml",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     tavsiya: "lola",
@@ -193,7 +188,7 @@ export const products = [
   {
     id: 5,
     start: 5,
-    picture: productImage,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026191/Argenta_rgg831.svg",
     name: "Argeta 100ml",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     turi: "Sirop",
@@ -207,7 +202,7 @@ export const products = [
   {
     id: 6,
     start: 5,
-    picture: productImage,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026191/Argenta_rgg831.svg",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     name: "Argeta 100ml",
     tavsiya: "barno",
@@ -221,7 +216,7 @@ export const products = [
   {
     id: 7,
     start: 5,
-    picture: productImage,
+    picture: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026191/Argenta_rgg831.svg",
     name: "Argeta 100ml",
     body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make.....",
     data: "10 oy",
@@ -276,29 +271,29 @@ export const customerCard = [
     data: "10.05.2024",
   },
 ];
-import logos from "../src/assets/hamkor1 1.svg";
+
 export const hamkorlar = [
   {
     id: 1,
-    pic: logos,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026203/hamkor1_1_vffahn.svg",
   },
   {
     id: 2,
-    pic: logos,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026203/hamkor1_1_vffahn.svg",
   },
   {
     id: 3,
-    pic: logos,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026203/hamkor1_1_vffahn.svg",
   },
   {
     id: 5,
-    pic: logos,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026203/hamkor1_1_vffahn.svg",
   },
 ];
-import limon from "../src/assets/Limon.svg";
+
 export const chegirma = [
   {
-    pic: limon,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026213/Limon_pthhfu.svg",
     sena: 20,
     name: "Oyning eng ommabop mahsuloti",
     body_1: "Lorem ipsum dolor sit amet consectetur.",
@@ -308,7 +303,7 @@ export const chegirma = [
   },
   {
     id: 1,
-    pic: limon,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026213/Limon_pthhfu.svg",
     sena: 20,
     name: "Oyning eng ommabop mahsuloti",
     body_1: "Lorem ipsum dolor sit amet consectetur.",
@@ -318,7 +313,7 @@ export const chegirma = [
   },
   {
     id: 2,
-    pic: limon,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026213/Limon_pthhfu.svg",
     sena: 20,
     name: "Oyning eng ommabop mahsuloti",
     body_1: "Lorem ipsum dolor sit amet consectetur.",
@@ -328,7 +323,7 @@ export const chegirma = [
   },
   {
     id: 3,
-    pic: limon,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026213/Limon_pthhfu.svg",
     sena: 20,
     name: "Oyning eng ommabop mahsuloti",
     body_1: "Lorem ipsum dolor sit amet consectetur.",
@@ -338,7 +333,7 @@ export const chegirma = [
   },
   {
     id: 4,
-    pic: limon,
+    pic: "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026213/Limon_pthhfu.svg",
     sena: 20,
     name: "Oyning eng ommabop mahsuloti",
     body_1: "Lorem ipsum dolor sit amet consectetur.",

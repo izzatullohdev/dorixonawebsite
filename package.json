@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.14.1",
+    "@cloudinary/url-gen": "^1.21.0",
     "@pbe/react-yandex-maps": "^1.2.5",
     "antd": "^5.24.3",
     "framer-motion": "^11.2.6",

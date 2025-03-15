@@ -8,6 +8,7 @@ import { Modal, Input } from "antd";
 const { TextArea } = Input;
 
 const Products = () => {
+  const uzbFlag = "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026022/flag_vdivbv.jpg";
   const { t } = useTranslation();
   const { products } = useContext(dataContext);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -17,6 +18,13 @@ const Products = () => {
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
+  const [phone, setPhone] = useState("+998");
+  
+    const handlePhoneChange = (e) => {
+      if (e.target.value.startsWith("+998")) {
+        setPhone(e.target.value);
+      }
+    };
   const videoUrl = "https://www.youtube.com/watch?v=DttV5GCdEMc";
 
   useEffect(() => {
@@ -137,11 +145,20 @@ const Products = () => {
             )}
             <div className="w-[500px] max-md:w-[80vw] flex flex-col items-center justify-center rounded-lg">
               <h1 className="text-center font-medium text-[25px] mb-3">Register form</h1>
-              <form action="" className="w-full flex flex-col items-center gap-3">
-                <Input type="text" placeholder="Name" className="text-[17px]"/>
-                <Input type="email" placeholder="Email" className="text-[17px]"/>
-                <TextArea placeholder="Your message..." rows={4} className="text-[17px]"/>
-                <button className="w-full text-[#EECB98] font-medium bg-[#354f52] rounded-md px-12 mt-2 py-2">Submit</button>
+              <form className="w-full flex flex-col items-center gap-3">
+                <Input type="text" placeholder={t("register.name")} className="text-[17px]" />
+                 <Input
+                   type="text"
+                   placeholder={t("register.phone")}
+                   value={phone}
+                  onChange={handlePhoneChange}
+                   className="text-[17px]"
+                   prefix={<img src={uzbFlag} alt="UZB" className="w-7 h-5 rounded-sm" />}
+                />
+                 <TextArea placeholder={t("register.message")} rows={4} className="text-[17px]" />
+                 <button className="w-full text-[#EECB98] font-medium bg-[#354f52] rounded-md px-12 mt-2 py-2">
+                  {t("register.button")}
+                </button>
               </form>
             </div>
           </div>

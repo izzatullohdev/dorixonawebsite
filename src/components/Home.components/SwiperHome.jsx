@@ -39,10 +39,10 @@ const SwiperHome = () => {
               <h1 className="text-[20px] md:text-[32px] lg:text-[72px] leading-[35px] md:leading-[45px] lg:leading-[72px] ">
                 {item.name}
               </h1>
-              <p className="my-2 md:my-5 text-[14px] md:block lg:hidden">
+              <p className="my-2 md:my-5 text-[18px] max-md:text-[13px] md:block lg:hidden">
                 {item.body.slice(0, 100)}...
               </p>
-              <p className="my-2 md:my-5 text-[14px] hidden md:hidden lg:block">
+              <p className="my-2 md:my-5 text-[18px] max-md:text-[13px] hidden md:hidden lg:block">
                 {item.body}
               </p>
 

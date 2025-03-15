@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Hamburger from "hamburger-react";
-import { CiSearch } from "react-icons/ci";
-import logo from "../../assets/logo.png";
 import { useContext } from "react";
 import { dataContext } from "../../useContext/DataContext";
+// react icons 
+import { IoCartOutline } from "react-icons/io5";
+import { AiOutlineGlobal } from "react-icons/ai";
+
 const MediaNavbar = () => {
+  const logo = "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026078/logo_zqcq7u.png";
   const [lang] = useState("uz");
   const [isOpen, setOpen] = useState(false);
+  const [cartLength, setCartLength] = useState(0);
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -35,9 +39,9 @@ const MediaNavbar = () => {
     { path: "/", name: t("navbar.main") },
     { path: "/about", name: t("navbar.about") },
     { path: "/product", name: t("navbar.product") },
+    { path: "/feedback", name: t("navbar.feedback") },
     { path: "/news", name: t("navbar.news") },
-    { path: "/alldoctors", name: t("navbar.doc") },
-    { path: "/cart", name: t("navbar.cart") },
+    { path: "/alldoctors", name: t("navbar.doc") }
   ];
   const handlePage = (page) => {
     setDataPage(page);
@@ -46,25 +50,50 @@ const MediaNavbar = () => {
     setOpen(false);
   };
 
+  const handleLanguageChange = (e) => {
+    setLang(e.target.value);
+    i18n.changeLanguage(e.target.value);
+  };
+
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartLength(cart.length);
+  }, []);
+
   return (
     <div>
-      <nav className="bg-[#354F52] p-5">
+      <nav className="bg-[#354F52] p-4">
         <div className="container mx-auto flex justify-between items-center">
-          <img src={logo} alt="Logo" className="max-sm:w-[80px] w-[100px]" />
+          <NavLink to={"/"}>
+            <img src={logo} alt="Logo" className="max-sm:w-[110px] w-[125px]" />
+          </NavLink>
           <div className="flex-1 px-4">
-            <div className="search bg-white flex items-center gap-4 px-4 py-1 rounded-md">
-              <input
-                type="text"
-                className="outline-none w-full"
-                placeholder={t("search")}
-                value={searchQuery}
-                onChange={handleInputChange}
-              />
-              <CiSearch />
-            </div>
           </div>
-          <div className="flex items-center text-[#fff]">
-            <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
+          <div className="flex items-center max-md:gap-1 text-[#fff]">
+            <li className="flex items-center justify-center">
+              <NavLink to="/cart">
+                <IoCartOutline className="text-2xl"/>
+              </NavLink>
+               {cartLength > 0 && (
+                 <div className="w-[16px] h-[20px] rounded-[50%] flex items-center justify-center bg-[#333] shadow shadow-[#333] text-sm">
+                   {cartLength}
+                 </div>
+               )}
+            </li>
+            {/* <div className="flex items-center">
+              <AiOutlineGlobal size={20} />
+              <select
+                name="language"
+                 id="language"
+                className="bg-inherit text-xl max-md:text-lg outline-none cursor-pointer"
+                onChange={handleLanguageChange}
+               >
+                 <option value="uz" className="text-black">uz</option>
+                 <option value="ru" className="text-black">ru</option>
+                 <option value="en" className="text-black">en</option>
+               </select>
+            </div> */}
+            <Hamburger toggled={isOpen} toggle={setOpen} size={21} />
           </div>
         </div>
         <div
@@ -85,35 +114,6 @@ const MediaNavbar = () => {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 lg:gap-10 p-2">
-            {filteredData.map((product) => (
-              <div
-                key={product.id}
-                className="border p-5 rounded-md border-stone-300 flex justify-center items-center flex-col bg-[#fff]"
-              >
-                <img
-                  src={product.picture}
-                  className="w-[70px] md:w-[100px] lg:w-[150px]"
-                  alt=""
-                />
-                <h1 className="mt-2 font-[500] text-[18px] md:text-[20px] lg:text-[20px]">
-                  {product.name}
-                </h1>
-                <p className="text-[16px] md:text-[18px] lg:text-[20px] my-1">
-                  {product.sum} {t("product.productSena")}
-                </p>
-                <NavLink
-                  to="/datapage"
-                  onClick={() => handlePage(product)}
-                  className="btn px-10 py-2 text-[15px] rounded-md"
-                >
-                  {t("Global.button")}
-                </NavLink>
-              </div>
-            ))}
-          </div>
         </div>
       </nav>
     </div>
