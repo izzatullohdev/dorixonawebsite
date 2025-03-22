@@ -1,13 +1,29 @@
-import { useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import { useContext } from "react";
-import { dataContext } from "../../useContext/DataContext";
+import { useDispatch, useSelector } from "react-redux";
+import { getPartner } from "../../store/partners";
+import { useState, useEffect } from "react";
+import { Spin } from "antd"
+import { LoadingOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
+
 const AboutComponents = () => {
+  const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
+  const { partner, status, error } = useSelector((state) => state.partner);
   const [state, setState] = useState(false);
-  const { hamkorlar } = useContext(dataContext);
-  const { t } = useTranslation();
+
+  useEffect(() => {   
+    dispatch(getPartner());
+  },[dispatch]);
+  
+  if (status === "loading") return 
+  <div className="absolute top-[50%] left-[50%] translate-x-[-50%]">
+    <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
+  </div>
+
+  if (status === "failed") return <p>Xatolik: {error}</p>;
+
   return (
     <>
       <div className="AboutComponents">
@@ -68,9 +84,9 @@ const AboutComponents = () => {
             {t("AboutComponents.hamkorlar")}
           </h1>
           <div className="flex justify-between items-center my-10 p-5">
-            {hamkorlar?.map((item) => (
-              <div key={item.id} className="w-[70px] md:w-[90px] lg:w-[170px]">
-                <img src={item.pic} alt="" />
+            {partner?.map((item) => (
+              <div key={item.id} className="w-[80px] md:w-[90px] lg:w-[180px]">
+                <img src={item.picture} alt="" />
               </div>
             ))}
           </div>

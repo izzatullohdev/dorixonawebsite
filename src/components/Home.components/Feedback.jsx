@@ -17,8 +17,7 @@ const Feedback = () => {
     }
     return url;
   };
-
-  console.log(videos);
+  
   return (
     <div className="my-10">
       <h1 className="text-center text-[28px] md:text-[30px] lg:text-[40px] font-[500] pb-5">

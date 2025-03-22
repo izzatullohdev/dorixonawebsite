@@ -15,7 +15,7 @@
   },
   "doctors": {
     "mainInfo": "Bizning Shifokorlar",
-    "direction": "Yonalishi",
+    "direction": "Yo'nalishi",
     "call": "Tel raqam",
     "info": "Ma'lumot"
   },
@@ -25,7 +25,8 @@
     "sena": "uzs",
     "global": "Ommabop",
     "reacting": "Reytingi yuqori",
-    "productSena": "sum"
+    "productSena": "sum",
+    "price":"narxi"
   },
   "customer": {
     "name": "Mijozlar fikri"

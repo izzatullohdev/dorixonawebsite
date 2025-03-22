@@ -25,7 +25,8 @@
     "sena": "uzs",
     "global": "Popular",
     "reacting": "High Rating",
-    "productSena": "sum"
+    "productSena": "sum",
+    "price":"price"
   },
   "customer": { 
     "name": "Customer Opinion" 

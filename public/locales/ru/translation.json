@@ -25,7 +25,8 @@
     "sena": "узс",
     "global": "Популярный",
     "reacting": "Высокий рейтинг",
-    "productSena": "sum"
+    "productSena": "sum",
+    "price":"цена"
   },
   "customer": { 
     "name": "Мнение клиентов" 
