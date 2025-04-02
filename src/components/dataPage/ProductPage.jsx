@@ -11,7 +11,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 
 const ProductPage = () => {
   const { id } = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const { products, status, error } = useSelector((state) => state.products);
 
@@ -47,7 +47,7 @@ const ProductPage = () => {
             {product.sum} sum
           </p>
           <button className="btn text-[14px] md:text-[16px] lg:text-[17px]">
-            Sotib Olish
+            {t("purchase.purchase")}
           </button>
         </div>
         <div className="w-[45%] md:w-[40%] lg:w-[25%]">

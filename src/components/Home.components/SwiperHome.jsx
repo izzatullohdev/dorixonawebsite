@@ -41,14 +41,14 @@ const SwiperHome = () => {
         }}
         loop={true}
         modules={[Pagination, Autoplay]}
-        className="container mx-auto h-[50vh] md:h-[60vh] lg:h-[70vh]"
+        className="container mx-auto h-[70vh] md:h-[60vh] lg:h-[70vh]"
       >
         {swiper?.map((item) => (
           <SwiperSlide
             key={item.id}
-            className="flex justify-between items-center p-2"
+            className="flex justify-between items-center max-md:flex-col-reverse p-2"
           >
-            <div className="w-[50%] ">
+            <div className="w-[50%] max-md:w-full">
               <h1 className="text-[20px] md:text-[32px] lg:text-[72px] leading-[35px] md:leading-[45px] lg:leading-[72px]">
                 {
                   i18n.language === "uz"
@@ -59,7 +59,7 @@ const SwiperHome = () => {
                 }
               </h1>
               <div
-                className="py-5 text-[18px] md:text-[18px] leading-relaxed"
+                className="py-5 text-[14px] md:text-[18px] leading-relaxed"
                 dangerouslySetInnerHTML={{
                   __html:
                     i18n.language === "uz"
@@ -77,7 +77,7 @@ const SwiperHome = () => {
                 {t("Global.button")}
               </NavLink>
             </div>
-            <div className="w-[35%] md:w-[40%] overflow-hidden rounded-xl">
+            <div className="w-[55%] md:w-[40%] overflow-hidden rounded-xl">
               <img src={item.picture} alt="" className="w-full" />
             </div>
           </SwiperSlide>

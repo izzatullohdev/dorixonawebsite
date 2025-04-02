@@ -65,5 +65,13 @@
   },
   "adress": {
     "title": "Manzilimiz"
+  },
+  "purchase": {
+    "purchase":"sotib olish"
+  },
+  "news": {
+    "new":"Yutuqlar",
+    "discount":"Chegirmalar",
+    "null":"Hozircha chegirmadagi mahsulotlar mavjud emas!"
   }
 }

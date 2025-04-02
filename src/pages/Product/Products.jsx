@@ -1,5 +1,5 @@
 import SwiperHome from "../../components/Home.components/SwiperHome";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../store/product";
 import { useTranslation } from "react-i18next";
@@ -16,7 +16,6 @@ const Products = () => {
   const dispatch = useDispatch();
   const { products, status, error } = useSelector((state) => state.products);
 
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cartItems, setCartItems] = useState(
@@ -71,13 +70,13 @@ const Products = () => {
   return (
     <>
       <SwiperHome />
-      <div className="container mx-auto my-5">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 lg:gap-10 p-2">
+      <div className="container max-md:w-[90vw] mx-auto my-5">
+        <div className="grid grid-cols-4 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 gap-5 md:gap-10 lg:gap-10 p-2">
         {products.map((product) => (
           <div key={product.id}>
-            <div className="w-[80%] border p-5 rounded-md flex justify-center items-center flex-col">
+            <div className="border p-5 rounded-md flex justify-center items-center flex-col">
               <img src={product.picture} className="w-[150px]" alt={product.name} />
-              <h1 className="my-2 font-[500]">
+              <h1 className="text-xl my-2 font-semibold">
                 {
                   i18n.language === "uz"
                   ? product.name_uz
@@ -95,7 +94,7 @@ const Products = () => {
               </p>
               <div className="flex items-center gap-3 mt-2">
                 <button className="btn px-10 py-2 text-[15px] rounded-md" onClick={() => showModal(product)}>
-                  {t("Global.button")}
+                  {t("purchase.purchase")}
                 </button>
                 <button
                   className={`bg-[#354f52] rounded-md px-2 py-2 ${cartItems.includes(product.id) ? "hidden" : ""}`}

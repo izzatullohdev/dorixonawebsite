@@ -54,3 +54,18 @@ html {
 .rater-star {
   color: gray; /* Color for inactive stars */
 }
+
+.custom-select .ant-select-selector {
+  background-color: #354F52 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.custom-dropdown .ant-select-item {
+  background-color: #354F52 !important;
+  color: white !important;
+}
+
+.custom-dropdown .ant-select-item-option-active {
+  background-color: #354F52 !important; /* Hover rangi */
+}

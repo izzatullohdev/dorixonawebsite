@@ -65,5 +65,13 @@
   },
   "adress": {
     "title": "Our address"
+  },
+  "purchase": {
+    "purchase":"purchase"
+  },
+  "news": {
+    "new": "Achievements",
+    "discount": "Discounts",
+    "null":"There are no discounted products available at the moment!"
   }
 }

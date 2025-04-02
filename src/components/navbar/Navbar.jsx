@@ -1,55 +1,22 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { dataContext } from "../../useContext/DataContext";
 // icons
-import { AiOutlineGlobal } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 import { IoCartOutline } from "react-icons/io5";
+import Translation from "../translation";
 
 const Navbar = () => {
   const logo = "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026078/logo_zqcq7u.png";
-  const [lang, setLang] = useState("uz");
-  const { t, i18n } = useTranslation();
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
-  const { products, setDataPage } = useContext(dataContext);
+  const { t } = useTranslation();
   const [cartLength, setCartLength] = useState(0);
-
-  useEffect(() => {
-    localStorage.setItem("language", lang);
-  }, [lang]);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartLength(cart.length);
   }, []);
 
-  const handleLanguageChange = (e) => {
-    setLang(e.target.value);
-    i18n.changeLanguage(e.target.value);
-  };
-
-  const handleInputChange = (event) => {
-    const query = event.target.value;
-    setSearchQuery(query);
-    if (query) {
-      const filtered = products.filter((item) =>
-        item.name.toLowerCase().includes(query.toLowerCase())
-      );
-      setFilteredData(filtered);
-    } else {
-      setFilteredData([]);
-    }
-  };
-
-  const handlePage = (page) => {
-    setDataPage(page);
-    setFilteredData([]);
-    setSearchQuery("");
-  };
-
   return (
-    <nav id="navbar" className="bg-[#2F3E46]">
+    <nav id="navbar" className="bg-[#354F52]">
       <div className="container mx-auto py-3 flex justify-between items-center">
         <NavLink to={"/"}>
           <img src={logo} alt="" className="w-[130px] md:w-[130px] lg:w-[150px]" />
@@ -82,19 +49,7 @@ const Navbar = () => {
               </div>
             )}
           </li>
-          <li className="flex items-center">
-            <AiOutlineGlobal size={21} />
-            <select
-              name="language"
-              id="language"
-              className="bg-inherit text-xl max-md:text-lg outline-none cursor-pointer"
-              onChange={handleLanguageChange}
-            >
-              <option value="uz" className="text-black">uz</option>
-              <option value="ru" className="text-black">ru</option>
-              <option value="en" className="text-black">en</option>
-            </select>
-          </li>
+          <Translation />
         </ul>
       </div>
     </nav>

@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Hamburger from "hamburger-react";
-import { useContext } from "react";
-import { dataContext } from "../../useContext/DataContext";
 // react icons 
 import { IoCartOutline } from "react-icons/io5";
-import { AiOutlineGlobal } from "react-icons/ai";
+import Translation from "../translation";
 
 const MediaNavbar = () => {
   const logo = "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026078/logo_zqcq7u.png";
@@ -19,22 +17,6 @@ const MediaNavbar = () => {
     localStorage.setItem("language", lang);
     i18n.changeLanguage(lang);
   }, [lang, i18n]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
-  const { products, setDataPage } = useContext(dataContext);
-  // Function to handle input changes
-  const handleInputChange = (event) => {
-    const query = event.target.value;
-    setSearchQuery(query);
-    if (query) {
-      const filtered = products.filter((item) =>
-        item.name.toLowerCase().includes(query.toLowerCase())
-      );
-      setFilteredData(filtered);
-    } else {
-      setFilteredData([]);
-    }
-  };
   const routes = [
     { path: "/", name: t("navbar.main") },
     { path: "/about", name: t("navbar.about") },
@@ -43,17 +25,6 @@ const MediaNavbar = () => {
     { path: "/news", name: t("navbar.news") },
     { path: "/alldoctors", name: t("navbar.doc") }
   ];
-  const handlePage = (page) => {
-    setDataPage(page);
-    setFilteredData([]);
-    setSearchQuery("");
-    setOpen(false);
-  };
-
-  const handleLanguageChange = (e) => {
-    setLang(e.target.value);
-    i18n.changeLanguage(e.target.value);
-  };
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -80,26 +51,13 @@ const MediaNavbar = () => {
                  </div>
                )}
             </li>
-            {/* <div className="flex items-center">
-              <AiOutlineGlobal size={20} />
-              <select
-                name="language"
-                 id="language"
-                className="bg-inherit text-xl max-md:text-lg outline-none cursor-pointer"
-                onChange={handleLanguageChange}
-               >
-                 <option value="uz" className="text-black">uz</option>
-                 <option value="ru" className="text-black">ru</option>
-                 <option value="en" className="text-black">en</option>
-               </select>
-            </div> */}
             <Hamburger toggled={isOpen} toggle={setOpen} size={21} />
           </div>
         </div>
         <div
           className={`transition-transform duration-300 ease-out ${
             isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
-          }`}
+            }`}
         >
           <ul className="flex flex-col items-center py-4 bg-[#354F52]">
             {routes.map((route) => (
@@ -113,6 +71,7 @@ const MediaNavbar = () => {
                 </NavLink>
               </li>
             ))}
+            <Translation />
           </ul>
         </div>
       </nav>

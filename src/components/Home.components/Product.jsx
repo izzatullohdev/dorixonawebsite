@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -82,19 +82,19 @@ const Product = () => {
         pagination={{ clickable: true }}
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         breakpoints={{
-          0: { slidesPerView: 2 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
         }}
         loop
         modules={[Pagination, Autoplay]}
-        className="h-[40vh]"
+        className="h-[40vh] w-[90vw]"
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
-            <div className="w-[80%] border p-5 rounded-md flex justify-center items-center flex-col">
+            <div className="border p-5 rounded-md flex justify-center items-center flex-col">
               <img src={product.picture} className="w-[150px]" alt={product.name} />
-              <h1 className="my-2 font-[500]">
+              <h1 className="text-xl my-2 font-semibold">
                 {
                   i18n.language === "uz"
                   ? product.name_uz
@@ -112,7 +112,7 @@ const Product = () => {
               </p>
               <div className="flex items-center gap-3 mt-2">
                 <button className="btn px-10 py-2 text-[15px] rounded-md" onClick={() => showModal(product)}>
-                  {t("Global.button")}
+                  {t("purchase.purchase")}
                 </button>
                 <button
                   className={`bg-[#354f52] rounded-md px-2 py-2 ${cartItems.includes(product.id) ? "hidden" : ""}`}
@@ -125,7 +125,7 @@ const Product = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex items-center justify-center mt-1">
+      <div className="flex items-center justify-center mt-1 max-md:mt-5">
         <NavLink to="/product" className="btn btn-card">
           {t("Global.more")}
         </NavLink>
