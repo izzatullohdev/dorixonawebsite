@@ -11,8 +11,19 @@ const Navbar = () => {
   const [cartLength, setCartLength] = useState(0);
 
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartLength(cart.length);
+    const updateCartLength = () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      setCartLength(cart.length);
+    };
+
+    // Initial update
+    updateCartLength();
+
+    // Set up an interval to update the cart length every 500ms
+    const intervalId = setInterval(updateCartLength, 500);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -39,12 +50,12 @@ const Navbar = () => {
           </li>
         </ul>
         <ul className="text-[#fff] flex items-center gap-5">
-          <li className="flex items-center justify-center">
+          <li className="flex items-center justify-center gap-[1px]">
             <NavLink to="/cart">
               <IoCartOutline className="text-2xl"/>
             </NavLink>
             {cartLength > 0 && (
-              <div className="w-[16px] h-[20px] rounded-[50%] flex items-center justify-center bg-[#333] shadow shadow-[#333] text-sm">
+              <div className="w-[16px] h-[20px] rounded-[50%] flex items-center justify-center bg-[#333] shadow shadow-[#333] text-sm mt-1">
                 {cartLength}
               </div>
             )}

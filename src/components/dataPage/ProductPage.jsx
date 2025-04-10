@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../store/product";
 import { useTranslation } from "react-i18next";
-import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
-import DataVideo from "./DataVideo";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
+// import DataVideo from "./DataVideo";
+// import Rater from "react-rater";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -20,8 +20,10 @@ const ProductPage = () => {
   }, [dispatch]);
 
   if (status === "loading") return (
-    <div className="absolute top-[50%] left-[50%] translate-x-[-50%]">
-      <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
+    <div className="min-h-[70vh]">
+      <div className="absolute top-[50%] left-[50%] translate-x-[-50%]">
+        <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
+      </div>
     </div>
   );
 
@@ -34,19 +36,25 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto min-h-[60vh]">
       <div className="flex justify-between items-center py-10 px-5">
         <div className="w-[50%] md:w-[50%] lg:w-[40%]">
           <h1 className="text-[20px] md:text-[25px] lg:text-[40px]">
-            {product.name}
+          {  
+            i18n.language === "uz"
+            ? product.name_uz
+            : i18n.language === "ru"
+            ? product.name_ru
+            : product.name_en
+          }
           </h1>
-          <p className="my-5 md:leading-7 lg:leading-10 text-[10px] md:text-[18px]">
+          {/* <p className="my-5 md:leading-7 lg:leading-10 text-[10px] md:text-[18px]">
             {product.body}
-          </p>
-          <p className="font-bold text-[18px] md:text-[20px] lg:text-[30px] my-3">
+          </p> */}
+          {/* <p className="font-bold text-[18px] md:text-[20px] lg:text-[30px] my-3">
             {product.sum} sum
-          </p>
-          <button className="btn text-[14px] md:text-[16px] lg:text-[17px]">
+          </p> */}
+          <button className="btn text-[14px] md:text-[16px] lg:text-[17px] cursor-pointer">
             {t("purchase.purchase")}
           </button>
         </div>
@@ -54,7 +62,7 @@ const ProductPage = () => {
           <img src={product.picture} alt={product.name} className="w-full" />
         </div>
       </div>
-      <div className="flex items-center justify-between my-5 md:my-8 lg:my-10 border-t py-5 px-4">
+      {/* <div className="flex items-center justify-between my-5 md:my-8 lg:my-10 border-t py-5 px-4">
         <div className="text-center">
           <h1 className="text-[16px] md:text-[25px] lg:text-[30px]">Turi</h1>
           <h1 className="text-[16px] md:text-[27px] lg:text-[40px]">
@@ -89,7 +97,7 @@ const ProductPage = () => {
         <div>
           <DataVideo videoUrl={product.videoUrl} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

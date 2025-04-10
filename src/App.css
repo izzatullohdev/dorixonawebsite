@@ -30,6 +30,7 @@ html {
     background-color: #354f52;
     color: #f2ce9a;
     border-radius: 5px;
+    cursor: pointer;
   }
   .btn_card {
     padding: 7px 16px;

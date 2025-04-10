@@ -9,6 +9,7 @@ import MediaNavbar from "../components/navbar/MediaNavbar";
 
 const RouterLayout = () => {
   const logo = "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026078/logo_zqcq7u.png";
+  const year = new Date().getFullYear();
   return (
     <>
       <header>
@@ -63,7 +64,7 @@ const RouterLayout = () => {
         </div>
         <div className="container mx-auto border-t-2 my-5">
           <p className="text-center text-[#fff] pt-[50px]">
-            © 2022 alximik.uz Barcha huquqlar himoyalangan!
+            © {year} ndinoff.uz Barcha huquqlar himoyalangan!
           </p>
         </div>
       </footer>
