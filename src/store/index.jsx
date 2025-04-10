@@ -5,6 +5,7 @@ import swiperReducer from "../store/swiper_pills";
 import partnerReducer from "../store/partners";
 import productReducer from "../store/product";
 import discountReducer from "../store/discount";
+import commentReducer from "../store/commentaries";
 
 export const store = configureStore({
     reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
         swiper: swiperReducer,
         partner: partnerReducer,
         products: productReducer,
-        discount: discountReducer
+        discount: discountReducer,
+        commentaries: commentReducer,
     }
 })

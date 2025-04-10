@@ -1,17 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RouterLayout from "./layout/RouterLayout";
 import { dataContext } from "./useContext/DataContext";
-import {
-  headerData,
-  doctors,
-  products,
-  customerCard,
-  hamkorlar,
-  chegirma,
-  yutuqlar,
-  videos,
-} from "../data/data.js";
-
 // css
 import "./App.css";
 // pages
@@ -80,17 +69,7 @@ const App = () => {
   ]);
   return (
     <dataContext.Provider
-      value={{
-        headerData,
-        doctors,
-        products,
-        customerCard,
-        hamkorlar,
-        chegirma,
-        yutuqlar,
-        videos,
-        setDataPage,
-      }}
+      value={{setDataPage}}
     >
       <RouterProvider router={router} />
     </dataContext.Provider>

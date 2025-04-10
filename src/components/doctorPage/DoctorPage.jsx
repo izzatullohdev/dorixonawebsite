@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import VideoDoctor from "./VideoDoctor";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,7 +8,7 @@ import { Spin } from "antd"
 import { LoadingOutlined } from "@ant-design/icons";
 
 const DoctorPage = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { doctor, status, error } = useSelector((state) => state.doctor);
@@ -24,15 +24,11 @@ const DoctorPage = () => {
       </div>
     );
 
-  if (status === "failed") return <p className="text-center text-red-500">Xatolik: {error}</p>;
+  if (status === "failed") return <p className="text-center text-red-500 my-5">Xatolik: {error}</p>;
 
   const selectedDoctor = doctor.find((doc) => doc.id === Number(id));
 
   if (!selectedDoctor) return <div className="text-center">Doctor not found</div>;
-
-  const recommendedProducts = selectedDoctor.name2
-    ? selectedDoctor.products.filter((product) => product.tavsiya === selectedDoctor.name2)
-    : [];
 
   return (
     <div className="container mx-auto">

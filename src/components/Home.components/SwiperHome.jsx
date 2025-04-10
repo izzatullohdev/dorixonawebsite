@@ -54,7 +54,7 @@ const SwiperHome = () => {
       </div>
     );
 
-  if (status === "failed") return <p>Xatolik: {error}</p>;
+  if (status === "failed") return <p className="text-red-500 text-center my-5">Xatolik: {error}</p>;
 
   return (
     <>

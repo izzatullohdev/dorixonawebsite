@@ -28,7 +28,7 @@ const Doctors = () => {
     <div className="absolute top-[50%] left-[50%] translate-x-[-50%]">
       <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
     </div>
-    if (status === "failed") return <p>Xatolik: {error}</p>;
+    if (status === "failed") return <p className="text-red-500 text-center my-5">Xatolik: {error}</p>;
 
     if (!doctor || doctor.length === 0) return null;  
 

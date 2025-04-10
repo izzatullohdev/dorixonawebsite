@@ -63,7 +63,7 @@ const Product = () => {
   }
 
   if (status === "failed") {
-    return <p className="text-center text-red-500">{t("error")}: {error}</p>;
+    return <p className="text-red-500 text-center my-5">{t("error")}: {error}</p>;
   }
 
   return (
