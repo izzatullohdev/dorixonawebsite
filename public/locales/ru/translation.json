@@ -33,7 +33,10 @@
   },
   "Global": {
     "button": "Подробнее",
-    "more":"Больше"
+    "more":"Больше",
+    "type":"Тип",
+    "rating":"рейтинг",
+    "composition":"Cостав продукта"
   },
   "AboutComponents": {
     "heading": "О нас",

@@ -88,7 +88,7 @@ const Product = () => {
         }}
         loop
         modules={[Pagination, Autoplay]}
-        className="h-[40vh] w-[90vw]"
+        className="w-[90vw]"
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>

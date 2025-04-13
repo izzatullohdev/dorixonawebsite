@@ -33,7 +33,10 @@
   },
   "Global": {
     "button": "More details",
-    "more":"More"
+    "more":"More",
+    "type":"Type",
+    "rating":"rating",
+    "composition":"Product composition"
   },
   "AboutComponents": {
     "heading": "About Us",

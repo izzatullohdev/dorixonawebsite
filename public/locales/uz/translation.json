@@ -33,7 +33,10 @@
   },
   "Global": {
     "button": "Batafsil",
-    "more":"Ko'proq"
+    "more":"Ko'proq",
+    "type":"Turi",
+    "rating":"reyting",
+    "composition":"Mahsulot tarkibi"
   },
   "AboutComponents": {
     "heading": "Biz haqimizda",

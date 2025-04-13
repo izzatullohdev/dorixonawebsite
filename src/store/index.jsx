@@ -6,6 +6,7 @@ import partnerReducer from "../store/partners";
 import productReducer from "../store/product";
 import discountReducer from "../store/discount";
 import commentReducer from "../store/commentaries";
+import pillsReducer from "../store/pills_id";
 
 export const store = configureStore({
     reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
         products: productReducer,
         discount: discountReducer,
         commentaries: commentReducer,
+        pills: pillsReducer,
     }
 })
