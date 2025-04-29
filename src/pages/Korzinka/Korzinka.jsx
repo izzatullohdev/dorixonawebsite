@@ -116,7 +116,6 @@ const Korzinka = () => {
         )}
       </div>
 
-      {/* ✅ Modal (Mahsulot ma'lumotlari chiqishi) */}
       <Modal open={isModalVisible} onCancel={handleCancel} footer={null} width={900} centered>
         <div className="flex max-md:flex-col items-center justify-center gap-10 p-10">
           {selectedProduct && (

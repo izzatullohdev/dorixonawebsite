@@ -42,6 +42,10 @@ const Feedback = () => {
     return <p className="text-center text-red-500 my-5">{t("error")}: {error}</p>;
   }
 
+  if ((status === "succeeded" || status === "idle") && commentaries.length === 0) {
+    return null;
+  }  
+
   return (
     <div className="my-10">
       <h1 className="text-center text-[28px] md:text-[30px] lg:text-[40px] font-[500] pb-5">

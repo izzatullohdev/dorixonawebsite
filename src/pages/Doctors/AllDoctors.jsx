@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 const AllDoctors = () => {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
-  const { doctor, status, error } = useSelector((state) => state.doctor);
+  const { doctor, status } = useSelector((state) => state.doctor);
   
   const doc = "https://res.cloudinary.com/dmgcfv5f4/image/upload/v1742026100/Doc_rijauy.svg";
 
@@ -21,10 +21,16 @@ const AllDoctors = () => {
     console.log(doctor);
   
     if (status === "loading") return 
+
     <div className="absolute top-[50%] left-[50%] translate-x-[-50%]">
       <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
     </div>
-    if (status === "failed") return <p>Xatolik: {error}</p>;
+
+    if ((status === "succeeded" || status === "idle") && doctor.length === 0) {
+      return <div className="min-h-[60vh] text-gray-500 flex items-center justify-center">
+                <h1>Hech qanday shifokor topilmadi!</h1>
+             </div>
+    }
 
   return (
     <>
@@ -70,7 +76,7 @@ const AllDoctors = () => {
               className="flex items-center flex-col border p-3 rounded-lg w-[80%] md:w-[45%] lg:w-[25%]"
               key={item.id}
             >
-              <img src={item.picture} alt="" className="rounded-t-lg"/>
+              <img src={item.picture} alt="" className="rounded-t-lg w-[200px] h-[250px]"/>
               <h3 className="text-[27px] my-3">{item.fullname}</h3>
               <div>
                 <h3 className="">

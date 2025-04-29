@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import RouterLayout from "./layout/RouterLayout";
 import { dataContext } from "./useContext/DataContext";
 // css
@@ -15,6 +15,7 @@ import ProductPage from "./components/dataPage/ProductPage.jsx";
 import DoctorPage from "./components/doctorPage/DoctorPage.jsx";
 import Korzinka from "./pages/Korzinka/Korzinka.jsx";
 import Feedback from "./pages/Feedback/Feedback.jsx";
+import Notfound from "./pages/404Notfound/index.jsx";
 
 const App = () => {
   // eslint-disable-next-line no-unused-vars
@@ -64,6 +65,15 @@ const App = () => {
           path: "/doctorpage/:id",
           element: <DoctorPage />,
         },
+        {
+          path: "*",
+          element: <Navigate to="/404" />,
+        },
+        {
+          path: "/404",
+          element: <Notfound />,
+        }
+        
       ],
     },
   ]);

@@ -4,13 +4,13 @@ import "react-rater/lib/react-rater.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getPills } from "../../store/pills_id";
-import { Spin, Modal, Input } from "antd";
+import { createOrder } from "../../store/order";
+import { Spin, Modal, Input, message as AntMessage } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 const { TextArea } = Input;
 
-// HTML entity ni oddiy matnga aylantiruvchi funksiya
 const decodeHTML = (html) => {
   const parser = new DOMParser();
   const decoded = parser.parseFromString(html, "text/html");
@@ -27,6 +27,9 @@ const DataPage = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [phone, setPhone] = useState("+998");
+  const [fullname, setFullname] = useState("");
+  const [userMessage, setUserMessage] = useState("");
+  const [btnLoading, setBtnLoading] = useState(false);
 
   useEffect(() => {
     if (id) {
@@ -50,7 +53,38 @@ const DataPage = () => {
     setIsModalVisible(false);
   };
 
-  console.log(pill);
+  const handleOrderSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!fullname || !phone || !userMessage) {
+      AntMessage.error("Iltimos, barcha maydonlarni to'ldiring!");
+      return;
+    }
+
+    setBtnLoading(true);
+
+    try {
+      await dispatch(
+        createOrder({
+          fullname,
+          phone_number: phone,
+          message: userMessage,
+          pill_id: selectedProduct?.id,
+        })
+      ).unwrap();
+
+      AntMessage.success("Buyurtma muvaffaqiyatli yuborildi!");
+      setIsModalVisible(false);
+      setFullname("");
+      setPhone("+998");
+      setUserMessage("");
+    } catch (err) {
+      AntMessage.error("Buyurtma yuborishda xatolik yuz berdi!");
+    }
+    finally {
+      setBtnLoading(false);
+    }
+  };
 
   if (status === "loading") {
     return (
@@ -146,15 +180,45 @@ const DataPage = () => {
                 }
               </h1>
               <p className="py-2"><strong>Narxi:</strong> {selectedProduct.price} {t("product.productSena")}</p>
+              <p className="w-[90%]">
+                {
+                  i18n.language === "uz"
+                  ? selectedProduct.information_uz.slice(0, 100)
+                  : i18n.language === "ru"
+                  ? selectedProduct.information_ru.slice(0, 100)
+                  : selectedProduct.information_en.slice(0, 100)
+                }...
+              </p>
             </div>
           )}
           <div className="w-[500px] max-md:w-[80vw] flex flex-col items-center justify-center rounded-lg">
-            <h1 className="text-center font-medium text-[25px] mb-3">Register form</h1>
-            <form className="w-full flex flex-col items-center gap-3">
-              <Input placeholder={t("register.name")} className="text-[17px]" />
-              <Input value={phone} onChange={handlePhoneChange} className="text-[17px]" prefix={<img src={uzbFlag} alt="UZB" className="w-7 h-5 rounded-sm" />} />
-              <TextArea placeholder={t("register.message")} rows={4} className="text-[17px]" />
-              <button className="w-full bg-[#354f52] text-[#EECB98] font-medium rounded-md px-12 mt-2 py-2">{t("register.button")}</button>
+            <h1 className="text-center font-medium text-[25px] mb-3">{t('purchase.purchase')}</h1>
+            <form onSubmit={handleOrderSubmit} className="w-full flex flex-col items-center gap-3">
+            <Input
+                placeholder={t("register.name")}
+                value={fullname}
+                onChange={(e) => setFullname(e.target.value)}
+                className="text-[17px]"
+              />
+              <Input
+                value={phone}
+                onChange={handlePhoneChange}
+                className="text-[17px]"
+                prefix={<img src={uzbFlag} alt="UZB" className="w-7 h-5 rounded-sm" />}
+              />
+              <TextArea
+                placeholder={t("register.message")}
+                rows={4}
+                value={userMessage}
+                onChange={(e) => setUserMessage(e.target.value)}
+                className="text-[17px]"
+              />
+              <button
+                type="submit"
+                className="w-full bg-[#354f52] text-[#EECB98] font-medium rounded-md px-12 mt-2 py-2"
+              >
+                {btnLoading ? <LoadingOutlined spin /> : t("register.button")}
+              </button>
             </form>
           </div>
         </div>

@@ -29,6 +29,12 @@ const Feedback = () => {
     return url;
   };
 
+  if ((status === "succeeded" || status === "idle") && commentaries.length === 0) {
+    return <div className="min-h-[60vh] text-gray-500 flex items-center justify-center">
+              <h1>Hech qanday shifokor topilmadi!</h1>
+           </div>
+  }
+
   if (status === "loading") {
     return (
       <div className="absolute top-[50%] left-[50%] translate-x-[-50%]">

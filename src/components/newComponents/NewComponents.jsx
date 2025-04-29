@@ -24,7 +24,7 @@ const NewComponents = () => {
 
   return (
     <>
-      <div className="container mx-auto  ">
+      <div className="container mx-auto">
         <h1 className="text-center my-5 md:my-10 lg:my-20 text-[30px] md:text-[40px] lg:text-[50px]">
           {t("news.new")}
         </h1>

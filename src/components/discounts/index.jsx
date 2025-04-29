@@ -71,7 +71,7 @@ const Discounts = () => {
   return (
     <div className="container mx-auto">
       {discount.length === 0 ? (
-        <p className="text-center text-lg mt-10">{t("news.null")}</p>
+        <p className="text-center text-gray-500 text-lg mt-10">{t("news.null")}</p>
       ) : (
         <Swiper
           slidesPerView={4}

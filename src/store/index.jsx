@@ -7,6 +7,8 @@ import productReducer from "../store/product";
 import discountReducer from "../store/discount";
 import commentReducer from "../store/commentaries";
 import pillsReducer from "../store/pills_id";
+import offerReducer from "../store/offer";
+import orderReducer from "../store/order";
 
 export const store = configureStore({
     reducer: {
@@ -18,5 +20,7 @@ export const store = configureStore({
         discount: discountReducer,
         commentaries: commentReducer,
         pills: pillsReducer,
+        offer: offerReducer,
+        order: orderReducer
     }
 })

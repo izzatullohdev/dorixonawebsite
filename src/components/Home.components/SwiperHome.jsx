@@ -11,7 +11,6 @@ import { Spin } from "antd";
 import { NavLink } from "react-router-dom";
 
 
-// HTML entity ni oddiy matnga aylantiruvchi funksiya
 const decodeHTML = (html) => {
   const parser = new DOMParser();
   const decoded = parser.parseFromString(html, "text/html");
@@ -35,6 +34,10 @@ const SwiperHome = () => {
     );
 
   if (status === "failed") return <p className="text-red-500 text-center my-5">Xatolik: {error}</p>;
+
+  if ((status === "succeeded" || status === "idle") && swiper.length === 0) {
+    return null;
+  }  
 
   return (
     <>

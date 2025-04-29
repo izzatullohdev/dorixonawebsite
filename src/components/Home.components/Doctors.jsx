@@ -71,7 +71,7 @@ const Doctors = () => {
         {doctor?.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="flex items-center flex-col border p-3 rounded-lg overflow-hidden">
-              <img src={item.picture} alt="" className="rounded-t-lg"/>
+              <img src={item.picture} alt="" className="rounded-t-lg w-[200px] h-[250px]"/>
               <h3 className="text-[18px] md:text-[20px] lg:text-[25px] my-3">
                 {item.fullname}
               </h3>
@@ -97,11 +97,11 @@ const Doctors = () => {
                   <span className="font-[600]">{t("doctors.info")}: </span>
                   {
                     i18n.language === "uz"
-                    ? item.body_uz
+                    ? item.body_uz.slice(0,70)
                     : i18n.language === "ru"
-                    ? item.body_ru
-                    : item.body_en
-                  }
+                    ? item.body_ru.slice(0,70)
+                    : item.body_en.slice(0,70)
+                  }...
                 </p>
                 <NavLink to={`/doctorpage/${item.id}`} className="btn btn_card mt-2">
                   {t("Global.button")}
